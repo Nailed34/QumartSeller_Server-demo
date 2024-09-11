@@ -1,0 +1,1 @@
+Singleton ASP.Net server with services, that will be converted into microservices in the future
