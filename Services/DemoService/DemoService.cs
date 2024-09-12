@@ -24,7 +24,7 @@ namespace DemoServiceNamespace
                 return new();
 
             var resultCount = lastIndex - firstIndex + 1;
-            return Data.Slice(firstIndex, Math.Min(resultCount, Data.Count - firstIndex + 1));
+            return Data.Slice(firstIndex - 1, Math.Min(resultCount, Data.Count - firstIndex + 1));
         }
 
         public bool AuthorizeUser(InUserAuthorization clientUser)
@@ -83,9 +83,9 @@ namespace DemoServiceNamespace
 
                 var newProduct = new ProductInfo();
                 newProduct.articuls.Add(articul);
-                newProduct.id = i.ToString();
+                newProduct.id = (i + 1).ToString();
                 newProduct.barcodes.Add(mainBarcode);
-                newProduct.name = "Product card #" + i.ToString();
+                newProduct.name = "Product card #" + (i + 1).ToString();
                 newProduct.stocks = stocks;
                 // Random photo
                 //newProduct.photo = PhotoData[random.Next(0, PhotoData.Length)];
